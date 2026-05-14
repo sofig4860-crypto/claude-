@@ -37,6 +37,7 @@ def search_youtube(query: str, limit: int = 25) -> list[dict]:
         "force_generic_extractor": False,
         "default_search": "ytsearch",
         "playlist_items": f"1-{limit}",
+        "nocheckcertificate": True,  # needed in environments with SSL inspection proxies
     }
 
     search_query = f"ytsearch{limit}:{query}"

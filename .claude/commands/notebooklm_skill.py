@@ -419,7 +419,7 @@ async def run():
     args = parser.parse_args()
 
     try:
-        async with NotebookLMClient.from_storage() as client:
+        async with await NotebookLMClient.from_storage() as client:
             if args.command == "list":
                 await cmd_list(client)
 
